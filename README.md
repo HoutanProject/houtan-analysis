@@ -17,7 +17,7 @@ Once pushed to a proper spreadsheet, can use as follow:
 
 This is a URL that you can open in the browser.
 
-By default, this URL serves a web inetrface:
+By default, this URL serves a web interface:
 
 Can then test on different text files or generate the JSON document.
 
