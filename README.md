@@ -1,5 +1,9 @@
 # houtan-analysis
 
+## LICENSE
+
+GPLv3
+
 ## Goal and Overview
 
 houtan-analysis is a set of Google Apps Script code that reads from a Google Spreadsheet document containing:
@@ -8,6 +12,10 @@ houtan-analysis is a set of Google Apps Script code that reads from a Google Spr
  * columns: 地铁站名称	BSSID	Session
  
  and outputs a JSON document mapping MAC addresses of BSSID and the name of the station (地铁站名称)
+
+## Output
+
+see https://github.com/HoutanProject/houtan-analysis/blob/master/shanghai.json
 
 ## Usage
 
@@ -19,11 +27,18 @@ This is a URL that you can open in the browser.
 
 By default, this URL serves a web interface:
 
+![web interface](https://raw.githubusercontent.com/HoutanProject/houtan-analysis/master/houtan-analysis.png "Web interface")
+
+
 Can then test on different text files or generate the JSON document.
 
 You can also append ```?export=1``` to the URL to open the full JSON mapping (this is actually what we'll want to consume in the Houtan Android application).
 
-TODO: should be a way to generalize this and publish as a web add-ons to facilitate usage in other application
+TODO: should be a way to generalize this and publish as a web add-ons to facilitate usage in other application.
+
+## Current output
+
+
 
 ## Development
 
