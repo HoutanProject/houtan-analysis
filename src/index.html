@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script>
+      // Prevent forms from submitting.
+      function preventFormSubmit() {
+        var forms = document.querySelectorAll('form');
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].addEventListener('submit', function(event) {
+            event.preventDefault();
+          });
+        }
+      }
+      window.addEventListener('load', preventFormSubmit);
+      
+      function handler(d) {
+        const display = JSON.stringify(d, null, 4);
+        document.getElementById('output').innerText = display;
+      }
+      function handleFormSubmit(formObject) {
+        google.script.run.withSuccessHandler(handler).processForm(formObject);
+      }
+
+      function handleCompute(formObject) {
+        google.script.run.withSuccessHandler(handler).compute();
+      }
+      
+      function handleUrl(formObject) {
+        google.script.run.withSuccessHandler(handler).getActiveSpreadsheetUrl();
+      }
+      
+      function updateUrl(url) {
+        var div = document.getElementById('output');
+        div.innerHTML = '<a href="' + url + '">Got it!</a>';
+      }
+    </script>
+  </head>
+  <body>
+    <p>Any text file containing MAC addresses is accepted</p>
+    <form id="myForm" onsubmit="handleFormSubmit(this)">
+      <input name="myFile" type="file" />
+      <input type="submit" value="Submit" />
+    </form>
+    <p>Re-calculate from spreadsheet values</p>
+    <form id="computeForm" onsubmit="handleCompute(this)">
+      <input type="submit" value="Recompute from source spreadsheet file" />
+    </form>
+     <p>Get spreadsheet URL</p>
+    <form id="urlForm" onsubmit="handleUrl(this)">
+      <input type="submit" value="Get URL of spreadsheet used" />
+    </form>
+    <pre id="output"></pre>
+ </body>
+</html>
