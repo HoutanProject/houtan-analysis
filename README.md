@@ -36,10 +36,6 @@ You can also append ```?export=1``` to the URL to open the full JSON mapping (th
 
 TODO: should be a way to generalize this and publish as a web add-ons to facilitate usage in other application.
 
-## Current output
-
-
-
 ## Development
 
 ### Building Google Apps Script command-line utility (clasp)
